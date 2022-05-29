@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ctrash</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="logo.PNG"/>
+
+    <!--Poppins Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+
+    <!--My Stylesheets and Scripts-->
+    <link rel= "stylesheet" href= "style.css"/>
+    <script src="{{ url_for('static',filename='scripts/main.js') }}" defer></script>
+</head>
+
+<body class id = "entirepage">
+<section class = "header">
+    <nav>
+        <a href="index.html"> <img src="logo.PNG"> </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="toggleMenu()"></i>
+    </nav>
+
+    
+    <div class="menu">
+        <h1>CalEnviroMap</h1>
+        <!-- <p>Making it easier to classify trash and tabulate data, <br> contributing to environmental campaigns.</p> -->
+        <a href="about.html" class="hero-btn">Learn More</a>
+        <div class="row">
+            <div class="menu-col">
+                <!-- <img src="images/london.png">
+                <a href="detection.html" class="layer">
+                    <h4>Input an image, and we'll classify it! We'll give you its name as well as if it should be recycle, trashed, or composted!</h4>
+                    <h3>CATEGORIZE TRASH</h3>
+                </a> -->
+                <a class="menu-icon" href="{{ url_for('detection_page') }}">
+                    <i class="fa fa-file-image-o"></i>
+                </a>
+                <p style="margin-top: 0; color: white;">CLASSIFY YOUR IMAGE</p>
+            </div>
+            <div class="menu-col">
+                <!-- <img src="images/newyork.png">
+                <div class="layer">
+                    <h4>Submit your data, and help improve our classification algorithm and facilitate targeted environmental efforts!</h4>
+                    <h3>SUBMIT AN ITEM</h3>
+                </div> -->
+                <a class="menu-icon" href="{{ url_for('manualinput_page') }}">
+                    <i class="fa fa-file-text-o"></i>
+                </a>
+                <p style="margin-top: 0; color: white;">MANUAL INPUT</p>
+            </div>
+            <div class="menu-col">
+                <!-- <img src="images/washington.png">
+                <div class="layer">
+                    <h4>View the data we've gathered!</h4>
+                    <h3>VIEW THE DATA</h3>
+                </div> -->
+                <a class="menu-icon" href="{{ url_for('statistics_page') }}">
+                    <i class="fa fa-globe"></i>
+                </a>
+                <p style="margin-top: 0; color: white;">ON THE MAP</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<section class="footer">
+    <div class="icons">
+        <a href = "https://github.com/huskydj1/" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+        <a href = "mailto:djeong2005@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-google"></i></a>
+    </div>
+    <p>Feel Free to Contact Me at djeong23@andover.edu </p>
+</section>
+
+
+</body>
+</html>

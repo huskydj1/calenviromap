@@ -9,7 +9,7 @@
     min-height: 100vh;
     width: 100%;
     /*background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.png);*/
-    background-image: linear-gradient(to bottom, rgba(28, 122, 70, 0.6), rgba(43, 112, 111, 0.6), rgba(43, 112, 86, 0.6)), url(background.jpg); /*https://pixahive.com/photo/plastic-wastes-on-ocean-floor/*/
+    background-image: linear-gradient(to bottom, rgba(133, 183, 157, 0.4), rgba(133, 183, 157, 0.4), rgba(133, 183, 157, 0.4)), url(background.jpg); /*https://pixahive.com/photo/plastic-wastes-on-ocean-floor/*/
     background-position: center;
     background-size: cover;
     position: relative;
@@ -23,8 +23,9 @@ nav{
     align-items: center;
 }
 
+
 nav img{
-    width: 130px;
+    width: 4rem;
 }
 
 .nav-links{
@@ -50,7 +51,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: #463239;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -74,8 +75,8 @@ nav img{
 }
 
 .hero-btn:hover{
-    border: 1px solid #f44336;
-    background: #f44336;
+    border: 1px solid #2274A5;
+    background: #2274A5;
     transition: 1s;
 }
 
@@ -89,7 +90,7 @@ nav .fa{
     }
     .nav-links{
         position: absolute;
-        background: #f44336;
+        background: #2274A5;
         height: 100vh;
         width: 100%;
         top: 0;
@@ -155,10 +156,10 @@ p{
 
 .menu h1{
     font-size: 4.5rem;
-    color: white;
+    color: #FEF9FF;
     text-align: center;
     font-weight: bold;
-    text-shadow: 1px 1px 2px #000000;
+    text-shadow: 1px 1px 2px #463239;
 }
 
 .menu p{
@@ -254,13 +255,7 @@ p{
 .footer{
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-}
-
-.footer:h4{
-    margin-bottom: 25px;
-    margin-top: 20px;
-    font-weight: 600;
+    padding: 0.1rem 0;
 }
 
 .icons .fa{

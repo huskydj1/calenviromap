@@ -569,3 +569,28 @@ p{
 #map{
     height: 100vh;
 }
+
+/*--Maps Page--*/
+.map{
+    background-color: rgba(4, 147, 114, 0.5);
+}
+figure {
+    border: 1px #cccccc solid;
+    padding: 4px;
+    margin: auto;
+}
+figcaption {
+    background-color: black;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+}
+
+/*--Feed Page--*/
+.feed-wall{
+    background-color: rgba(240, 234, 214, 0.7);
+}
+.feedwall-menu{
+    color: gray;
+}

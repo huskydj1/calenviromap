@@ -1,0 +1,571 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /*background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.png);*/
+    background-image: linear-gradient(to bottom, rgba(133, 183, 157, 0.45), rgba(133, 183, 157, 0.45), rgba(133, 183, 157, 0.4)), url("../images/background.jpg"); /*https://pixahive.com/photo/plastic-wastes-on-ocean-floor/*/
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: inline-block;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+
+nav img{
+    width: 4rem;
+}
+
+.nav-links{
+    display: none;
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #463239;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 0.75rem;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.hero-btn:hover{
+    border: 1px solid #2274A5;
+    background: #2274A5;
+    transition: 1s;
+}
+
+nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px){
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #2274A5;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+@media(min-width: 700px){
+    .nav-links{
+        display: block;
+    }
+}
+
+/*--Menu---*/
+
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+p{
+    color: #777;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px; 
+}
+
+.row{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu{
+    width: 50%;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+.menu h1{
+    font-size: 5rem;
+    color: #FEF9FF;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #463239;
+}
+
+.menu p{
+    margin: 10px 0 40px;
+    font-size: 0.75rem;
+    color: black;
+}
+
+.menu-col{
+    height: 15vh;
+    flex-basis: 32%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-col img{
+    width: 100%;
+    display: block;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover{
+    background: rgba(226, 0, 0, 0.7);
+}
+
+.layer h4{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 13px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h4{
+    bottom: 49%;
+    opacity: 1;
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+@media(max-width: 700px){
+    .menu h1{
+        font-size: 8rem;
+    }
+    .menu{
+        width: 90%;
+    }
+    /*
+    .row{
+        flex-direction: column;
+    }
+    */
+}
+
+/* Icons in Menu*/
+
+.menu-icon{
+    font-size: 2rem;
+    color:whitesmoke;
+    transition: 0.5s ease-out;
+}
+
+.menu-icon:hover{
+    color: turquoise;
+}
+
+/*---Footer----*/
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 0.1rem 0;
+}
+
+.icons .fa{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color: #f44336;
+}
+
+/*-------About Us Page------------*/
+.sub-header{
+    height: 150px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.sub-header h1{
+    margin-top: 100px;
+}
+
+.about{
+    background-color: #c2dde5;
+}
+
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 50px;
+    color: #1b3766;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us h1{
+    padding-top: 0;
+    font-size: 72px;
+    font-weight: 1000;
+}
+
+
+.about-us div{
+    padding: 15px 0 25px;
+}
+
+.about-us-paragraph{
+    font-size: 1.5rem;
+    text-indent: 2em;
+    line-height: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+.about-us-paragraph-bold{
+    font-weight: 800;
+    color: rgb(14, 82, 125);
+}
+
+.about-us-paragraph-link{
+    text-decoration: none;
+}
+
+.red-btn{
+    border: 1px solid #a8422b;
+    background: transparent;
+    color: #a8422b;
+}
+
+.red-btn:hover{
+    color: #fff;
+}
+
+/*---Detection--*/
+
+.detection{
+    background-image: url(../images/hero.jpg); /*https://pixahive.com/photo/plastic-wastes-on-ocean-floor/*/
+}
+
+.detection-header{
+    height: 150px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.detection-header h1{
+    margin-top: 100px;
+}
+
+.detection-section{
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.detection-row{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detection-col-left{
+    flex-basis: 48%;
+    padding: 30px 2px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.detection-preview-left{
+    width: 40%;
+    height: auto;
+    margin: 5%;
+    filter: grayscale(100%);
+    
+    flex: 4 0 0;
+}
+
+.detection_transition{
+    color: white;
+    font-size: 3rem; 
+    margin-top: 10%;
+
+    flex: 1 0 0;
+}
+
+.detection-preview-right{
+    width: 40%;
+    height: auto;
+    margin: 5%;
+
+    flex: 4 0 0;
+}
+
+.detection-preview-img{
+    width: 100%;
+    height: auto;
+    
+    box-shadow: 0 0 5px #b5cdd7;
+}
+
+.detection-col-right{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.detection_result{
+    width: 0;
+}
+
+.detection-col-right h1{
+    padding-top: 0;
+    font-size: 72px;
+    font-weight: 1000;
+    color: #bdccdd;
+    padding-bottom: 20px;
+}
+
+.detection-col-right p{
+    padding: 15px 0 25px;
+    color: #f7f8f9;
+}
+
+.detection-loader{
+    min-height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.detection-rhs-content{
+    width: 50%;
+}
+
+@media(max-width: 700px){
+    .detection-row{
+        flex-direction: column;
+    }
+    .detection-col-left{
+        flex-direction: column;
+    }
+}
+
+/*---Accordion---*/
+.accordion{
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+.accordion-item{
+    background-color: white;
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0, 0.25);
+}
+
+.accordion-item-header{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5 rem;
+    line-height: 1.25 rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item-header::after{
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion-item-header.active::after{
+    /*content: "\2212";*/
+    transform: rotate(45deg);
+}
+
+.accordion-item-body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content{
+    padding: 1rem;
+    line-height: 1.5 rem;
+    /* background-color: rgb(255, 255, 255, 0); */
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #bdccdd, transparent) 1;
+}
+/* .accordion-item-header.active + .accordion-item-body{
+    max-height: 200px;
+} */
+
+@media(max-width:700px){
+    html{
+        font-size: 14px;
+    }
+}
+
+/*--Statistics Page--*/
+.statistics-map-section{
+    width: 80%;
+    height: 100vh;
+    padding-top: 2rem;
+
+    margin: auto;
+    color: #1b3766;
+}
+
+/*--Manual Submission Page--*/
+.manualSubmit{
+    width: 50%;
+    margin: auto;
+}
+
+.manualSubmit h1{
+    padding-top: 0;
+    font-size: 48px;
+    font-weight: 1000;
+    color: #bdccdd;
+    padding-bottom: 20px;
+}
+.manualSubmit h2{
+    padding-top: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #bdccdd;
+    padding-bottom: 20px;
+}
+
+/* Results */
+
+.result-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.result-col img{
+    box-shadow: 0 0 5px #b5cdd7;
+}
+.result-col h1{
+    padding-top: 0;
+    font-size: 72px;
+    font-weight: 1000;
+    color: #bdccdd;
+    padding-bottom: 20px;
+}
+
+.result-col p{
+    padding: 15px 0 25px;
+    color: #f7f8f9;
+}
+
+/*--Experiences Page--*/
+
+#map{
+    height: 100vh;
+}

@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body, #container {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    /* height of .navbar, customize with @navbar-height variable */
+    padding-top: 50px;
+}
+
+body > #sidebar {
+    display: none;
+}
+
+.navbar {
+    min-height: 50px;
+    background-color:rgba(133, 183, 157, 0.3);
+}
+
+.navbar-logo img{
+    height: 40px;
+    width: auto;
+    margin: auto;
+}
+
+#map {
+    height: 100%;
+    width: auto;
+}
+
+.sidebar-img{
+    width: 100%;
+    height: auto;
+    margin: 5px;
+}
+
+.sidebar-caption{
+    font-size: 1.5rem;
+}
+
+.hulk-img{
+    height: 100%;
+    width: auto;
+}
+
+<button id="helpbutton" role="button" class="btn btn-primary">Learn More</button>

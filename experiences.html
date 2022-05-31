@@ -5,7 +5,7 @@
     <title>CalEnviroMap</title>
 
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="logo_california.PNG"/>
+    <link rel="shortcut icon" type="image/png" href="static/images/logo_california.PNG"/>
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
@@ -23,10 +23,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
 
     <!--My Stylesheets and Scripts-->
-    <link rel= "stylesheet" href= "experience_style.css"/>
+    <link rel= "stylesheet" href= "static/styles/experience_style.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    
+    <!--Leaflet-->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 
+    <!--Leaflet Sidebar-->
+    <link rel="stylesheet" href="static/leaflet-sidebar-v1/L.Control.Sidebar.css" />
+    <script src="static/leaflet-sidebar-v1/L.Control.Sidebar.js"></script>
+
+    <!--Leaflet Button-->
+    <script src="static/leaflet-button/L.Control.Button.js"></script>
+    
 </head>
 
 <body>
@@ -34,7 +43,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
     <div class="navbar-collapse collapse">
-        <a href="index.html" class="navbar-logo"> <img src="logo_california.PNG"> </a>
+        <a href="index.html" class="navbar-logo"> <img src="static/images/logo_california.PNG"> </a>
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="index.html">Home</a>
@@ -46,9 +55,21 @@
     </div>
     </div>
 </div>
-<div id="container">
-    <div id="map"></div>
+
+<div id="sidebar">
+    <h1>The Pasillas Family - Imperial County</h1>
+    <img src="static/pasillasfamily/unhealthyhousingpasillasfamily.jpg" class="sidebar-img img-rounded">
+    <p class="sidebar-caption bg-info">"Juan, his sister Maritza and their mother Monica Pasillas have all suffered from the bad air quality in Imperial County. Juan has asthma, Maritza experiences migraines and Monica lost her eye to an unknown airborne bacteria last year." <b>Listen to their story here:</b></p>
+    <audio controls>
+        <source src="static/pasillasfamily/interview.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <h3>Source: <a href="https://www.capradio.org/articles/2019/01/30/living-in-one-of-the-most-polluted-places-in-california/">CapRadio</a></h3>
 </div>
+<div id="map"></div>
+
+<button id="addbutton" role="button" class="btn btn-primary" style="font-size: 2rem;">Add Your Own Experience!</button>
+
 
 <script>
     var map = L.map('map').setView([37.3, -119.417931], 6);
@@ -56,13 +77,60 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
-    });
+    }); 
     CartoDB_VoyagerLabelsUnder.addTo(map);
 
     // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     //     maxZoom: 19,
     //     attribution: '© OpenStreetMap'
     // }).addTo(map);
+
+
+    var sidebar = L.control.sidebar('sidebar', {
+        closeButton: true,
+        position: 'left'
+    });
+    map.addControl(sidebar);
+
+    setTimeout(function () {
+        sidebar.show();
+    }, 500);
+
+    var marker = L.marker([33.0114, -115.4734]).addTo(map).on('click', function () {
+        sidebar.toggle();
+    });
+
+    map.on('click', function () {
+        sidebar.hide();
+    })
+
+    sidebar.on('show', function () {
+        console.log('Sidebar will be visible.');
+    });
+
+    sidebar.on('shown', function () {
+        console.log('Sidebar is visible.');
+    });
+
+    sidebar.on('hide', function () {
+        console.log('Sidebar will be hidden.');
+    });
+
+    sidebar.on('hidden', function () {
+        console.log('Sidebar is hidden.');
+    });
+
+    L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+        console.log('Close button clicked.');
+    });
+
+
+
+    var button = new L.Control.Button(L.DomUtil.get('addbutton'), { toggleButton: 'active' });
+    button.addTo(map);
+    button.on('click', function () {
+        alert("Sorry! We're still working on this!");
+    });
 </script>
 </body>
 </html>
